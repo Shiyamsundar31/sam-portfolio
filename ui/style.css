@@ -1,14 +1,13 @@
 /*------------------------------FONT LINK------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-    --main-font:'montserrat';
-}
+
 /*------------------------------UNIVERSAL------------------------------*/
 *{
     padding: 0px;
     margin: 0px;
     color: aliceblue;
+    transition: all 0.5s ease; 
 
 }
 
@@ -19,26 +18,28 @@ body{
 ul,li,a{
     text-decoration: none;
     display: inline-block;
-    color: grey;
-    padding-left:2px;
+    color: white;
+    padding-left:8px;
     font-family: roboto;
     font-style:bold;
+   
     
 
 }
 .nav-bar{
     text-align: center;
-     margin-left: 60%;
+    margin-left: 60%;
     padding: 30px;
     display: inline;
-
+  
 
 }
 
-a:hover{
-    color: aliceblue;
-    background-color: chocolate;
-   
+.nav-link:hover {
+    margin-top: 5px;
+    transform: translateY(-5px);  
+    color: darkorchid;
+    transition: 0.3s;
 }
 .icon{
     text-align: left;
@@ -46,9 +47,79 @@ a:hover{
     display: inline-block;
     padding: 30px;
     
+    
+}
+span{
+    display: inline;
+}
+/*------------------------------landing-page------------------------------*/
+.about{
+    font-family: Montserrat;
+    text-align: left;
+    padding-left:30px;
+   
+    
+}
+h2,p{
+   
+   display: inline-block;
+}
+h2{
+    display: block;
+    
+    
+}
+p{
+    display: inline-block;
+    width: 50%;
+    line-height: 1.8; 
+    opacity: 0;                 /* hidden at first */
+    animation: fadeIn 7s ease forwards;
+}
+ /* key frame */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.about{
+   margin-top: 100px;
+}
+.fade-text {
+  opacity: 0;                 /* hidden at first */
+  animation: fadeIn 3s ease forwards;
+  animation: fadeout 3s ease backwards;/* fade in over 3 seconds */
+}
+.name:hover{
+    cursor: pointer;
+    transform: translateY(-8px);
+    color: white;   
+}
+.abt{
+    text-align: center;
+    font-family: montserrat;   
+}  
+
+/*------------------------------ 2_BUTTONS------------------------------*/
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;   /* text color */
+  border: 2px solid white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn:active {
+  border-color:darkorchid; 
+  color:darkorchid;
+  /* border changes to white on click */
 }
 
-
-    
-   
-
+.click{
+    text-align: center;
+    margin-top: 50px;
+}
