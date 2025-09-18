@@ -1,0 +1,54 @@
+/*------------------------------FONT LINK------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --main-font:'montserrat';
+}
+/*------------------------------UNIVERSAL------------------------------*/
+*{
+    padding: 0px;
+    margin: 0px;
+    color: aliceblue;
+
+}
+
+/*------------------------------landing-page------------------------------*/
+body{
+    background-color:black;
+}
+ul,li,a{
+    text-decoration: none;
+    display: inline-block;
+    color: grey;
+    padding-left:2px;
+    font-family: roboto;
+    font-style:bold;
+    
+
+}
+.nav-bar{
+    text-align: center;
+     margin-left: 60%;
+    padding: 30px;
+    display: inline;
+
+
+}
+
+a:hover{
+    color: aliceblue;
+    background-color: chocolate;
+   
+}
+.icon{
+    text-align: left;
+    font-family: Montserrat;
+    display: inline-block;
+    padding: 30px;
+    
+}
+
+
+    
+   
+
