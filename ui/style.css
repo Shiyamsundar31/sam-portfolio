@@ -7,7 +7,8 @@
     padding: 0px;
     margin: 0px;
     color: aliceblue;
-    transition: all 0.5s ease; 
+    transition: all 0.7s ease-in; 
+    transition: all 0.7s ease-out; 
 
 }
 
@@ -52,7 +53,7 @@ ul,li,a{
 span{
     display: inline;
 }
-/*------------------------------landing-page------------------------------*/
+/*------------------------------LINK CSS------------------------------*/
 .about{
     font-family: Montserrat;
     text-align: left;
@@ -120,6 +121,39 @@ p{
 }
 
 .click{
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
+    padding-left: 20px;
+}
+
+
+/*------------------------------SKILLS------------------------------*/
+
+.title1{
+        display: block;
+        text-align:center;
+        font-family: roboto;
+        color: darkorchid;
+        margin-top: 30px;
+}
+.title1:hover{
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.skills img{
+    display:inline-block;
+    height: 70px;
+    width: 70px;
+} 
+.skills h4{
+    display: inline-block;
+    height: ;
+    width: ;
+}
+.css{
+    display: inline-block;
+}
+.java{
+    display: inline-block;
 }
