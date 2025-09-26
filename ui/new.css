@@ -1,0 +1,582 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    transition: all 0.5s ease;
+    background-color: var(--clr-bg);
+    color: white;
+    text-decoration: ;
+    list-style: none;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+:root{
+    /*-------font family------*/
+
+   --ff-heading: "Poppins", serif;
+   --ff-paragraph: "Open Sans", serif;
+   --ff-navbar: "Roboto Condensed", serif;
+
+
+    /*-------COLOR------*/
+    --clr-bg:#0D0D0D;
+    --clr-primary:#10B981;
+    --clr-avg:#7C3AED;
+     --clr-text:#FFFFFF;
+}
+
+.heading{
+  font-family: var(--ff-heading);
+  display:inline-block;           
+  justify-content: space-between; 
+  align-items: center;       
+  padding: 50px 50px;
+ 
+}
+
+
+/*---------------------------------------NAV-BAR---------------------------------------*/
+.nav{
+  display: inline-block;
+  margin-left: 45%;
+  background-color: beige;
+}
+li{
+  display: inline-block;
+  font-family: var(--ff-navbar);
+  padding-left: 40px;
+  font-size: larger;
+  font-weight: bolder;
+}
+.nav li:hover {
+  cursor: pointer;
+  color: #3B82F6;
+  color:var(--clr-avg); /* glowing text color */
+  text-shadow: 0 0 10px var(--clr-avg), 0 0 20px var(--clr-avg);
+}
+
+/*---------------------------------------IMAGE1---------------------------------------*/
+.content {
+  display: flex;
+  flex-direction: column;   /* stack image and text vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically if needed */
+  text-align: center;       /* center text */
+  padding: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pic img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  opacity: 0;                     
+  transform: translateY(50px);
+  box-shadow: 0 0 25px darkorchid;   
+  animation: fadeUp 1.5s ease-out forwards;}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*---------------------------------------NAME---------------------------------------*/
+.txt h1 {
+  margin: 10px;
+  opacity: 0;                    /* start invisible */
+  transform: translateY(-20px);  /* start slightly above */
+  animation: h1Anim 1s ease-out forwards; /* runs once */
+}
+.txt span{
+  color: var(--clr-primary);
+  text-shadow: 0 0 25px var(--clr-primary);
+  
+}
+
+/*---------------------------------------PARAGRAPH---------------------------------------*/
+
+.txt p {
+  max-width: 1000px;
+  margin: 20px auto;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;                    /* start invisible */
+  transform: translateY(20px);   /* start slightly below */
+  animation: pAnim 1s ease-out forwards; 
+  animation-delay: 0.5s;         /* starts after h1 animation */
+}
+
+/*---------------------------------------ANIMATION---------------------------------------*/
+
+
+@keyframes h1Anim {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*---------------------------------------BUTTONS---------------------------------------*/
+.btn {
+  display: inline-block;
+  font-family: var(--ff-heading);
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  color: gray;
+  background-color: #fafafa;
+}
+
+.btn:active {
+  border-color: darkorchid;
+  color: darkorchid;
+}
+
+.click {
+  display: flex;               /* make buttons in a row */
+  justify-content: center;     /* center them horizontally */
+  gap: 15px;                   /* space between buttons */
+  margin: 50px 0;
+}
+
+/*---------------------------------------ABOUT ME---------------------------------------*/
+.abt {
+  display: flex;                    /* arrange text + image side by side */
+  align-items: center;              /* vertically center items */
+  justify-content: space-between;   /* space between text and image */
+  gap: 40px;                        /* space between text and image */
+  margin: 50px auto;                /* spacing from top/bottom */
+  max-width: 1200px;                /* control section width */
+  padding: 0 20px;
+  flex-wrap: wrap;                  /* responsive for smaller screens */
+}
+
+/* H1 styling */
+.abt h1 {
+  font-family: var(--ff-heading);
+  font-size: 50px;                  /* corrected 'size' to 'font-size' */
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;                       /* full width so it stays centered */
+  margin-bottom: 30px;
+  opacity: 0;                        /* for animation */
+  animation: h1Fade 1s ease-out forwards;
+}
+
+/* Image styling */
+.abt img {
+  display: block;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;               /* perfectly round */
+  object-fit: cover;
+  opacity: 0;                        /* start hidden for animation */
+  transform: translateY(50px);       /* start below */
+  animation: imgFade 1.5s ease-out forwards;
+  animation-delay: 0.3s;             /* delay for smooth effect */
+}
+
+/* Paragraph styling */
+.abt p {
+  max-width: 600px;                  /* controlled width for readability */
+  line-height: 1.8;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: left;
+  font-family: var(--ff-paragraph);
+  opacity: 0;                        /* start hidden for animation */
+  transform: translateY(20px);       /* start slightly below */
+  animation: pFade 1s ease-out forwards;
+  animation-delay: 0.6s;             /* delay after image */
+}
+
+/* Keyframes for animations */
+@keyframes h1Fade {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes imgFade {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.resume {
+  font-family: var(--ff-heading);
+  display: inline-block;
+  margin-top: 20px;        /* space from paragraph */
+  padding: 15px 30px;      /* bigger size */
+  font-size: 20px;          /* slightly bigger text */
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.resume:hover {
+  transform: translateY(-5px);
+  color: var(--clr-text);
+  background-color: var(--clr-primary);
+  box-shadow: 0 0 25px var(--clr-primary);
+}
+
+.resume:active {
+  border-color: darkorchid;
+  color: darkorchid;
+}
+
+.main-btn {
+  text-align: center;       /* center below paragraph */
+  margin-top: 30px;         /* spacing from paragraph */
+}
+.abt-content {
+  display: flex;                  /* horizontal layout */
+  align-items: center;            /* vertical alignment */
+  justify-content: space-between; /* space between paragraph and image */
+  gap: 40px;                      /* space between text and image */
+  flex-wrap: wrap;                /* responsive wrap */
+}
+
+.txt {
+  flex: 1;                        /* left side takes available space */
+  min-width: 300px;               /* prevent too small on mobile */
+}
+
+.img-container {
+  flex: 1;                        /* right side takes available space */
+  display: flex;
+  justify-content: center;         /* center image in its box */
+}
+
+.img-container img {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: imgFade 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.main-btn {
+  text-align: center;             /* center button below paragraph */
+  margin-top: 20px;
+}
+/*---------------------------------------SKILLS---------------------------------------*/
+
+.skill h1{
+  text-align: center;
+  font-family: var(--ff-heading);
+  margin: 50px;
+  font-size: 50px;
+}
+.skill h2{
+  text-align: center;
+  font-family: var(--ff-navbar);
+  font-weight: bolder;
+  margin-bottom: 20px;
+  font-size: 30px;
+   margin-top: 30px;
+  margin-bottom: 30px;
+}
+.skill p{
+  font-family: var(--ff-paragraph);
+  font-size: 15px;
+}
+.skill img{
+  padding: 10px;
+}
+.skill span{
+  font-weight: bolder;
+  font-size: larger;
+  color: #10B981;
+}
+.skill span:hover{
+  text-shadow: 0 0 20px var(--clr-avg);
+  color: var(--clr-avg);
+}
+/*--------------------------------------- SKILL  BOX1---------------------------------------*/
+.ui{
+  text-align: center;
+}
+
+.box1{
+  display: inline-block;
+  width:200px ;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 0 10px var(--clr-primary);
+  border-radius: 30px;
+  margin-left: 30px;
+}
+.box1:hover{
+  box-shadow: 0 0 25px var(--clr-avg);
+  transform: translateY(-8px);
+  border: 0 solid var(--clr-bg);
+  cursor: pointer;
+}
+
+/*--------------------------------------- SKILL  BOX2---------------------------------------*/
+.pl{
+  text-align: center;
+}
+.pl h2{
+ 
+}
+.box2{
+  display: inline-block;
+  width:200px ;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 0 10px var(--clr-primary);
+  border-radius: 30px;
+  margin-left: 30px;
+}
+.box2:hover{
+  box-shadow: 0 0 25px var(--clr-avg);
+  transform: translateY(-8px);
+  border: 0 solid var(--clr-bg);
+  cursor: pointer;
+}
+
+/*--------------------------------------- SKILL  BOX3---------------------------------------*/
+.tool{
+  text-align: center;
+}
+.box3{
+  display: inline-block;
+  width:200px ;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 0 10px var(--clr-primary);
+  border-radius: 30px;
+  margin-left: 30px;
+}
+.box3:hover{
+  box-shadow: 0 0 25px var(--clr-avg);
+  transform: translateY(-8px);
+  border: 0 solid var(--clr-bg);
+  cursor: pointer;
+}
+.box3 img{
+  padding: 10px;
+}
+.box3 p{
+  margin: 10px;
+}
+/*--------------------------------------- FADE IN ANIMATION ---------------------------------------*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to all boxes */
+.box1, .box2, .box3 {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Optional: stagger the animation for each box */
+.box1 {
+  animation-delay: 1.0s;
+}
+.box2 {
+  animation-delay: 1.0s;
+}
+.box3 {
+  animation-delay: 1.0s;
+}
+
+/* JUMP ANIMATION */
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px); /* how high it jumps */
+  }
+}
+
+/* Apply to all span inside skill boxes */
+.box1 span,
+.box2 span,
+.box3 span {
+  display: inline-block; /* required for transform */
+  animation: jump 0.9s ease-in-out infinite;
+}
+
+
+/*---------------------------------------PROJECTS---------------------------------------*/
+
+.project {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.project h1 {
+  font-family: var(--ff-heading);
+  color: var(--clr-text);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+/* Card container */
+.card1, .card2 {
+  display: flex;
+  align-items: flex-start;
+ box-shadow: 0 0 5px grey;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  background-color: #0D0D0D;       /* fully black background */
+  transition: transform 0.3s ease-in-out; /* only zoom */
+}
+
+.card1:hover, .card2:hover {
+  transform: scale(1.03);  
+       /* slight zoom only */
+        box-shadow: 0 0 10px var(--clr-primary);
+}
+
+/* Card image */
+.card1 img, .card2 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-right: 30px;
+  object-fit: cover;
+}
+
+/* Text column */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Titles */
+.card-text h2 {
+  font-family: var(--ff-heading);
+  color: #7C3AED;
+  margin: 0 0 10px;
+}
+
+/* Descriptions */
+.card-text h3 {
+  font-family: var(--ff-navbar);
+  color: grey;
+  margin: 5px 0 10px;
+  line-height: 1.5;
+}
+
+/* Technologies */
+.card-text h4 {
+  font-family: var(--ff-navbar);
+  color: white;
+  margin: 5px 0;
+}
+
+.card-text span {
+ 
+  color:bisque;
+  font-size: 25px;
+}
+
+/* GitHub button */
+.card-text button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: 2px solid grey;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--ff-paragraph);
+}
+
+/* Button hover */
+.card-text button:hover {
+  
+  box-shadow: 0 0 10px var(--clr-primary);
+  color: white;
+  border-color: var(--clr-primary);
+}
+
+/* Button link */
+.card-text button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .card1, .card2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card1 img, .card2 img {
+    margin: 0 0 20px 0;
+  }
+
+  .card-text button {
+    align-self: center;
+  }
+}
+
