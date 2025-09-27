@@ -31,35 +31,120 @@ html {
      --clr-text:#FFFFFF;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* semi-transparent dark bg */
+  color: white;                         /* ensures text is visible */
+  
+}
+
+/* Heading text color */
+.heading {
+  color: white;
+}
+
+/* Nav links */
+.nav li a {
+  color: white; /* ensures links are visible on dark background */
+}
+
+/* Add spacing below fixed header so first section isn't hidden */
+#home {
+  padding-top: 100px; /* equal or slightly more than header height */
+}
+
 .heading{
   font-family: var(--ff-heading);
   display:inline-block;           
   justify-content: space-between; 
   align-items: center;       
-  padding: 50px 50px;
+  padding: 20px;
  
 }
 
 
 /*---------------------------------------NAV-BAR---------------------------------------*/
-.nav{
-  display: inline-block;
-  margin-left: 45%;
-  background-color: beige;
+/* Header container */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px ;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 98%;
+  z-index: 1000;
+  
 }
-li{
-  display: inline-block;
+
+/* Heading */
+.heading {
+  font-family: var(--ff-heading);
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Nav list */
+.nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav links */
+.nav li a {
+  text-decoration: none;
   font-family: var(--ff-navbar);
-  padding-left: 40px;
-  font-size: larger;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color:white;
+  transition: 0.3s;
 }
-.nav li:hover {
-  cursor: pointer;
-  color: #3B82F6;
-  color:var(--clr-avg); /* glowing text color */
+
+.nav li a:hover {
+  color: var(--clr-avg);
   text-shadow: 0 0 10px var(--clr-avg), 0 0 20px var(--clr-avg);
+  cursor: pointer;
 }
+
+/* Hamburger icon - hidden on large screens */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none; /* hide links */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    
+  }
+  .nav ul.show {
+    display: flex; /* show links when clicked */
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
 
 /*---------------------------------------IMAGE1---------------------------------------*/
 .content {
@@ -533,7 +618,7 @@ li{
 
 .card-text span {
  
-  color:bisque;
+  color:red;
   font-size: 25px;
 }
 
@@ -561,6 +646,9 @@ li{
 .card-text button a {
   text-decoration: none;
   color: inherit;
+  font-family: var(--ff-navbar);
+  font-weight: bolder;
+  font-size: larger;
 }
 
 /* Responsive layout */
@@ -578,5 +666,115 @@ li{
   .card-text button {
     align-self: center;
   }
+}
+
+.contact{
+  text-align: center;
+   transition: transform 0.5s ease; 
+}
+
+.contact h1 {
+  font-family: var(--ff-heading);
+  color: var(--clr-text);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+
+.contact img{
+  height: 50px;
+  width: 50px;
+  margin-left: 30px;
+  margin-right: 20px;
+  border-radius: 40px;
+}
+.contact img:hover{
+  transform: scale(1.30); 
+  
+}
+
+
+form {
+  border: 1px solid #ddd; /* light grey border */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  padding: 30px 35px;
+  border-radius: 12px;
+  width: 360px;
+  margin: 40px auto;   /* centers form horizontally */
+  font-family: "Open Sans", serif; /* form font */
+ /* white background inside form */
+  box-sizing: border-box;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+  font-size: 22px;
+}
+
+form label {
+  display: block;
+  margin: 12px 0 6px;
+  color: #444;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 18px;
+  transition: 0.3s;
+  box-sizing: border-box;
+  font-family: "Open Sans", serif; /* placeholder and text font */
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  font-family: "Open Sans", serif;
+  color: #888;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--clr-avg);
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.5);
+}
+
+form input[type="submit"] {
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+form input[type="submit"]:hover {
+  background: var(--clr-primary);
+  box-shadow: 0 0 10px var(--clr-primary);
+}
+
+
+.footer p{
+  font-family: var(--ff-paragraph); /* your font */
+  text-align: center;
+  background-color: #10B981;       /* green background */
+  color: white;                     /* text color */
+  font-size: larger;
+  padding: 40px 0;                  /* vertical padding */
+  width: 100%;                      /* fill full width */
+  box-sizing: border-box;    /* include padding in width */
+  display: inline-block;
+  padding: 30px;
 }
 
